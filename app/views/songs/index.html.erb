@@ -1,0 +1,13 @@
+<h1> Favorite Songs this Week </h1>
+<div>
+  <% @songs.each do |song| %>
+    <li><%= link_to(song.title, song_path(song.id))%> - <%= song.artist %>
+        <%= link_to("Listen", "https://www.youtube.com/results?search_query=#{song.title}+#{song.artist}") %>
+    </li>
+  <% end %>
+</div><br><br>
+
+
+<nav>
+  <%= link_to("New Song", new_song_path) %>
+</nav>

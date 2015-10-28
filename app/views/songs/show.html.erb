@@ -1,0 +1,9 @@
+<h2><%= @song.title %></h2>
+<p><%= @song.artist %></p>
+
+<nav class="navbar-brand navbar-fixed-bottom">
+  <ul class="list-inline">
+  <li><%= link_to("Back to Index", songs_path) %></li>
+  <li><%= link_to("Edit", edit_song_path(@song))%></li>
+  <li><%= link_to("Delete", song_path(@song), method: :delete)%></li>
+</nav>

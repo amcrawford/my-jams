@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyJams</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="rows">
+      <div class="col-md-5">
+        <%= yield %>
+      </div>
+      <div class="col-md-7">
+        <img src="https://splashbase.s3.amazonaws.com/unsplash/regular/tumblr_mpp6w0dxAm1st5lhmo1_1280.jpg" alt="books">
+      </div>
+    </div>
+</body>
+</html>

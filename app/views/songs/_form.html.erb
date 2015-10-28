@@ -1,0 +1,13 @@
+<%= flash.now[:errors] %>
+
+<%= form_for(@song) do |f|%>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :artist %>
+  <%= f.text_field :artist %><br><br>
+  <%= f.submit %>
+<% end %>
+
+<nav>
+  <%= link_to("Back to Index", songs_path) %>
+</nav>
