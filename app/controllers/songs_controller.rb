@@ -2,6 +2,7 @@ class SongsController < ApplicationController
   before_action :set_song, only: [:show, :edit, :update]
 
   def index
+    session[:most_recent_song_id] = Song.order(created_at: :desc).first.id
     @songs = Song.all
   end
 
@@ -15,6 +16,7 @@ class SongsController < ApplicationController
   def create
     @song = Song.new(song_params)
     if @song.save
+      flash[:notice] = "Song successfully saved."
       redirect_to song_path(@song)   # Rails is smart enough to also do redirect_to @song
     else
       flash.now[:errors] = "Must enter a title and artist."
